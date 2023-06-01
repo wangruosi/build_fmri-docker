@@ -1,0 +1,16 @@
+pandas
+numpy
+scipy
+matplotlib
+seaborn
+nibabel
+nilearn
+nltools
+nipype
+hypertools
+networkx
+scikit-learn
+pynv
+nipype
+pybids
+jupyter-book

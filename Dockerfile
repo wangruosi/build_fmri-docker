@@ -30,5 +30,6 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
     rm get-pip.py
 
-RUN curl -O https://raw.githubusercontent.com/ljchang/dartbrains/master/requirements.txt && \
-    pip install -r requirements.txt
+COPY requirements.txt /tmp/requirements.txt
+
+RUN pip install -r /tmp/requirements.txt && rm /tmp/requirements.txt
