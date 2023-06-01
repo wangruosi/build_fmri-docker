@@ -32,4 +32,10 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
 
 COPY requirements.txt /tmp/requirements.txt
 
-RUN pip install -r /tmp/requirements.txt && rm /tmp/requirements.txt
+COPY entrypoint.sh /tmp/entrypoint.sh
+
+RUN pip install -r /tmp/requirements.txt && rm /tmp/requirements.txt && mkdir workspace && chmod 755 /tmp/entrypoint.sh
+
+ENTRYPOINT ["/tmp/entrypoint.sh"]
+
+WORKDIR /workspace
